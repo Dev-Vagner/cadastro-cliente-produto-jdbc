@@ -1,7 +1,5 @@
 package br.com.vbruno.dao.jdbc;
 
-import br.com.vbruno.VariaveisGlobais;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -24,7 +22,7 @@ public class ConnectionFactory {
     private static Connection initConnection() {
         try{
             return DriverManager.getConnection(
-                    VariaveisGlobais.urlPostgreSQL, VariaveisGlobais.userPostgreSQL, VariaveisGlobais.passwordPostgreSQL
+                    "jdbc:postgresql://localhost:5432/modulo29", "postgres", "postgres1234"
             );
         } catch (SQLException e) {
             throw new RuntimeException(e);
